@@ -1,0 +1,90 @@
+   1)   
+
+isEven :: Int -> Bool
+isEven n = mod n 2 == 0
+
+-- Se o número for par retorna True, caso contrário retorna False.
+
+
+   2)   
+
+somaquad :: Int -> Int -> Int
+somaquad x y = (x*x) + (y*y)
+
+
+   3)
+
+doubleFirst :: [Int] -> Int
+doubleFirst x = head x^2
+
+
+   4)
+
+hasEqHeads :: [Int] -> [Int] -> Bool
+hasEqHeads x y = if head x == head y then True else False
+
+
+   5)
+
+addMr :: [String] -> [String]
+addMr x = map("Mr. " ++)x
+
+
+   6)
+
+cont :: String -> Int
+cont x = length (filter(==' ')x)
+
+
+   7)
+
+funcMath :: [Double] -> [Double]
+funcMath x = map (\x -> (((3*x)^2) + 2)/(x + 1)) x
+
+
+   8)
+
+age :: [Int] -> [Int]
+age x = [x | x <- x, x < 45]
+
+age_ :: [Int] -> [Int]
+age_ x = filter (\x -> x < 45) x
+
+
+
+   9)
+
+serie :: Double -> [Double] -> Double
+serie m n = sum (map (/m) n)
+
+
+
+   10)
+
+charFound :: Char -> String -> Bool
+charFound c s = any (== c) s
+
+
+
+   11)
+
+htmlListItens :: [String] -> [String]
+htmlListItens [] = []
+htmlListItens x = ("<LI>" ++ (head x) ++ "</LI>") : htmlListItens (tail x)
+
+
+
+   12)
+
+sum (takeWhile(<10000)(filter odd(map(^2)[1..])))
+
+-- O objetivo do exemplo é calcular todos os números quadrados ímpares menores que 10000.
+-- Primeiramente, a função mapeia todos os números quadrados em uma lista, após isso filtra os ímpares e pega todos os valores que são menores de 10000.
+
+
+
+   13)
+
+findA :: [String] -> [String]
+findA [] = []
+findA x = if (last (takeWhile(/= ' ')(head x)))=='a' then (head x) : findA(tail x) else findA(tail x)
